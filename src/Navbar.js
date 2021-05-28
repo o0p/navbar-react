@@ -5,6 +5,8 @@ import logo from './logo.svg';
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
+  const linksContainerRef = useRef(null);
+  const linksRef = useRef(null);
   return (
     <nav>
       <div className="nav-center">
@@ -16,7 +18,8 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        <div className="links-container show-container">
+
+        <div className="links-container">
           <ul className="links">
             {links.map((link) => {
               const { id, url, text } = link;
@@ -28,6 +31,7 @@ const Navbar = () => {
             })}
           </ul>
         </div>
+
         <ul className="social-icons">
           {social.map((socialIcon) => {
             const { id, url, icon } = socialIcon;
